@@ -33,30 +33,85 @@
       margin: 0;
       color: #dfe6e9;
     }
+
+    /* login box styling */
+    #loginBox {
+      text-align: center;
+      margin-top: 100px;
+    }
+    input {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 4px;
+      color: white;
+      padding: 8px;
+      margin: 5px;
+    }
+    button {
+      background: #6c5ce7;
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #content {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <h2>A Journal Probably</h2>
 
-  <section>
-    <h3>Log #1: [9/13/25]</h3>
-    <p>Im fine?</p>
-  </section>
+  <div id="loginBox">
+    <h2>Login Required</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="checkLogin()">Login</button>
+    <p id="error" style="color:#e17055;"></p>
+  </div>
 
-  <section>
-    <h3>Log #2: [9/15/25]</h3>
-    <p>Just stop pretending, again and again. why you kept doing it?</p>
-  </section>
+  <div id="content">
+    <h2>A Journal Probably</h2>
 
-  <section>
-    <h3>Log #3: [9/16/25]</h3>
-    <p>Left out.</p>
-  </section>
+    <section>
+      <h3>Log #1: [9/13/25]</h3>
+      <p>Im fine?</p>
+    </section>
 
-  <section>
-    <h3>Log #4: [11/03/25]</h3>
-    <p>Never thought of updating this again lol after like 2 months overall everything is fine except my longest in mapeh -_-. Soo uhh idk ignore past logs lol this starting to turn into my own journal ig? Kinda tired everyday being repetitive now just giving my self pain for some reason should have put some type of protection on to this website so people wont read this easily even tho the repo is public XD</p>
-  </section>
-  
+    <section>
+      <h3>Log #2: [9/15/25]</h3>
+      <p>Just stop pretending, again and again. why you kept doing it?</p>
+    </section>
+
+    <section>
+      <h3>Log #3: [9/16/25]</h3>
+      <p>Left out.</p>
+    </section>
+
+    <section>
+      <h3>Log #4: [11/03/25]</h3>
+      <p>Never thought of updating this again lol after like 2 months overall everything is fine except my longest in mapeh -_-. Soo uhh idk ignore past logs lol this starting to turn into my own journal ig? Kinda tired everyday being repetitive now just giving my self pain for some reason should have put some type of protection on to this website so people wont read this easily even tho the repo is public XD</p>
+    </section>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      // Change these credentials to your own
+      const USER = "Aaron";
+      const PASS = "whyyouneedtoreadthis";
+
+      if (u === USER && p === PASS) {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        error.textContent = "Invalid username or password.";
+      }
+    }
+  </script>
+
 </body>
 </html>
